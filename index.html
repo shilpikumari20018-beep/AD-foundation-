@@ -3,636 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AD Foundation - Education, skills and activities">
 <title>AD Foundation | Education & Skill Development</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#172033;
-    background:#fff;
-    line-height:1.6;
-    overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-a{text-decoration:none}
-button,input,select,textarea{font:inherit}
-.container{width:min(92%,1150px);margin:auto}
+body{font-family:Arial,Helvetica,sans-serif;color:#10213d;background:#fff;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none}.container{width:min(92%,1200px);margin:auto}
 
-/* HEADER */
-header{
-    background:#071b3a;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
-.navbar{
-    min-height:72px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#fff;
-    font-size:20px;
-    font-weight:700;
-    white-space:nowrap;
-}
-.logo-mark{
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:#42d6b5;
-    color:#071b3a;
-    font-weight:800;
-}
-.logo b{color:#42d6b5}
-nav{display:flex;align-items:center;gap:24px}
-nav a{
-    color:#fff;
-    font-size:14px;
-    font-weight:600;
-    transition:.25s;
-}
-nav a:hover{color:#42d6b5}
-.menu{
-    display:none;
-    border:0;
-    background:transparent;
-    color:#fff;
-    font-size:28px;
-    cursor:pointer;
-}
+/* NAVBAR */
+header{position:sticky;top:0;z-index:1000;background:#061b3d;box-shadow:0 4px 18px rgba(0,0,0,.15)}
+.navbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;font-size:24px;font-weight:800;white-space:nowrap}
+.logo-mark{width:48px;height:48px;border-radius:50%;background:#43d7b7;color:#071b3a;display:grid;place-items:center;font-size:19px;font-weight:900}
+.logo b{color:#43d7b7}
+nav{display:flex;align-items:center;gap:30px}
+nav a{color:#fff;font-weight:600;font-size:15px;padding:28px 0;position:relative}
+nav a:hover,nav a.active{color:#43d7b7}
+nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:18px;height:3px;background:#43d7b7;border-radius:3px}
+.apply-top{background:#43d7b7!important;color:#06203f!important;padding:12px 22px!important;border-radius:9px}
+.apply-top:after{display:none}
+.menu{display:none;border:0;background:none;color:#fff;font-size:30px;cursor:pointer}
 
 /* HERO */
-.hero{
-    min-height:620px;
-    display:flex;
-    align-items:center;
-    color:#fff;
-    background:linear-gradient(135deg,#071b3a,#0c3565);
-}
-.hero-content{
-    display:grid;
-    grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
-    gap:55px;
-    align-items:center;
-    padding:70px 0;
-}
-.small-title{
-    color:#42d6b5;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:2px;
-}
-.hero h1{
-    font-size:clamp(40px,5vw,60px);
-    line-height:1.12;
-    margin:18px 0;
-}
-.hero h1 span{display:block;color:#42d6b5}
-.hero p{max-width:620px;color:#d5dfec;font-size:17px}
-.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-.btn{
-    display:inline-block;
-    padding:13px 23px;
-    border-radius:8px;
-    font-weight:700;
-    transition:.25s;
-}
-.primary{background:#42d6b5;color:#071b3a}
-.primary:hover{transform:translateY(-3px)}
-.secondary{border:1px solid #42d6b5;color:#fff}
-.secondary:hover{background:#42d6b5;color:#071b3a}
-.hero-card{
-    width:100%;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);
-    border-radius:24px;
-    padding:42px 28px;
-    text-align:center;
-}
-.hero-icon{
-    width:88px;height:88px;margin:auto;
-    display:grid;place-items:center;
-    border-radius:50%;
-    background:#42d6b5;
-    font-size:43px;
-}
-.hero-card h2{margin-top:18px}
-.hero-card p{margin:8px auto}
-.stats{
-    display:flex;
-    justify-content:center;
-    gap:45px;
-    margin-top:24px;
-}
-.stats strong{display:block;color:#42d6b5;font-size:24px}
-
-/* COMMON SECTIONS */
-section{padding:82px 0}
-.section-title{
-    max-width:700px;
-    margin:0 auto 48px;
-    text-align:center;
-}
-.section-title span{
-    color:#159f86;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:2px;
-}
-.section-title h2{
-    color:#071b3a;
-    font-size:clamp(30px,4vw,38px);
-    line-height:1.2;
-    margin:8px 0;
-}
-.section-title p{color:#687386}
-
-/* ABOUT */
-.about{background:#f7fafc}
-.about-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:60px;
-    align-items:center;
-}
-.about-image{
-    min-height:340px;
-    background:#e5f7f3;
-    border-radius:24px;
-    display:grid;
-    place-items:center;
-}
-.about-circle{
-    width:205px;height:205px;
-    border-radius:50%;
-    background:#071b3a;
-    display:grid;place-items:center;
-    font-size:85px;
-}
-.about-text h3{font-size:30px;color:#071b3a;margin-bottom:12px}
-.about-text>p{color:#687386;margin-bottom:20px}
-.feature{display:flex;gap:14px;margin:18px 0}
-.check{
-    width:35px;height:35px;flex:0 0 35px;
-    display:grid;place-items:center;
-    border-radius:50%;
-    background:#42d6b5;
-    color:#071b3a;
-    font-weight:800;
-}
-.feature h4{color:#071b3a}
-.feature p{color:#687386;font-size:14px}
+.hero{min-height:690px;background-image:linear-gradient(90deg,rgba(4,20,43,.88) 0%,rgba(4,20,43,.48) 43%,rgba(4,20,43,.12) 100%),url("assets/hero.jpg");background-size:cover;background-position:center;display:flex;align-items:center;color:#fff}
+.hero-content{padding:85px 0;max-width:650px}
+.hero-tag{color:#43d7b7;font-weight:800;letter-spacing:1.5px;font-size:15px}
+.hero h1{font-size:clamp(43px,6vw,72px);line-height:1.05;margin:20px 0}
+.hero h1 span{color:#43d7b7}
+.hero p{font-size:18px;color:#e0e8f1;max-width:570px}
+.hero-buttons{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:14px 23px;border-radius:9px;font-weight:800;display:inline-flex;align-items:center;gap:9px;transition:.25s}
+.btn-primary{background:#43d7b7;color:#061b3d}.btn-primary:hover{transform:translateY(-3px)}
+.btn-outline{border:2px solid #43d7b7;color:#fff}.btn-outline:hover{background:#43d7b7;color:#061b3d}
 
 /* CLASSES */
-.class-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:24px;
-}
-.class-card{
-    padding:28px;
-    border:1px solid #e3e8ef;
-    border-radius:15px;
-    background:#fff;
-    transition:.25s;
-}
-.class-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(7,27,58,.1);
-}
-.class-icon{
-    width:62px;height:62px;
-    display:grid;place-items:center;
-    border-radius:14px;
-    background:#e8f8f4;
-    font-size:29px;
-    margin-bottom:17px;
-}
-.class-card h3{color:#071b3a;margin-bottom:8px}
-.class-card p{color:#687386;font-size:14px;min-height:65px}
-.class-card a{display:inline-block;margin-top:13px;color:#159f86;font-weight:700}
+section{padding:78px 0}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-heading .eyebrow{color:#20ae92;font-weight:800;letter-spacing:1.5px;font-size:13px}
+.section-heading h2{font-size:39px;line-height:1.2;color:#071b3a;margin-top:7px}
+.section-heading p{color:#6b7788;margin-top:10px}
+.class-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px}
+.class-card{min-height:190px;padding:25px 14px 20px;text-align:center;border:1px solid #e3e8ef;border-radius:17px;background:#fff;box-shadow:0 5px 20px rgba(7,27,58,.05);transition:.25s}
+.class-card:hover{transform:translateY(-7px);box-shadow:0 14px 30px rgba(7,27,58,.12)}
+.class-icon{width:62px;height:62px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:31px;background:#42d6b5}
+.class-card:nth-child(2) .class-icon{background:#6f9ff4}
+.class-card:nth-child(3) .class-icon{background:#a784ed}
+.class-card:nth-child(4) .class-icon{background:#ffad2f}
+.class-card:nth-child(5) .class-icon{background:#3cb9b6}
+.class-card:nth-child(6) .class-icon{background:#ed5c87}
+.class-card:nth-child(7) .class-icon{background:#ffb91e}
+.class-card h3{font-size:17px;color:#071b3a;line-height:1.3}
+
+/* ABOUT */
+.about{background:#f6fafb}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-image{height:360px;border-radius:25px;background:url("assets/hero.jpg") center/cover;position:relative;overflow:hidden}
+.about-image:after{content:"AD FOUNDATION";position:absolute;inset:auto 0 0;padding:25px;background:linear-gradient(transparent,rgba(7,27,58,.85));color:#fff;font-size:25px;font-weight:800}
+.about-text h2{font-size:35px;color:#071b3a;margin-bottom:15px}.about-text p{color:#687386}
+.points{margin-top:20px;display:grid;gap:15px}.point{display:flex;gap:12px;align-items:flex-start}.check{width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:#43d7b7;display:grid;place-items:center;font-weight:900}
 
 /* ACTIVITIES */
-.activities{background:#071b3a}
-.activities .section-title h2{color:#fff}
-.activities .section-title p{color:#c5d0de}
-.activity-grid{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:20px;
-}
-.activity{
-    padding:28px 18px;
-    text-align:center;
-    border-radius:15px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.1);
-}
-.activity span{font-size:40px}
-.activity h3{color:#fff;margin:12px 0 6px}
-.activity p{color:#c5d0de;font-size:13px}
+.activities{background:#071b3a}.activities .section-heading h2{color:#fff}.activities .section-heading p{color:#c6d1df}
+.activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.activity{padding:30px 18px;text-align:center;border-radius:17px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.activity span{font-size:42px}.activity h3{color:#fff;margin:12px 0 5px}.activity p{color:#c6d1df;font-size:14px}
 
 /* ADMISSION */
-.admission{background:#f7fafc}
-.form-box{
-    max-width:900px;
-    margin:auto;
-    background:#fff;
-    padding:38px;
-    border-radius:20px;
-    box-shadow:0 10px 35px rgba(7,27,58,.08);
-}
-.form-row{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:20px;
-}
-.form-group{margin-bottom:19px}
-label{
-    display:block;
-    color:#071b3a;
-    font-weight:700;
-    font-size:14px;
-    margin-bottom:7px;
-}
-input,select,textarea{
-    width:100%;
-    padding:13px 14px;
-    border:1px solid #dce2e9;
-    border-radius:7px;
-    outline:none;
-}
-input:focus,select:focus,textarea:focus{
-    border-color:#42d6b5;
-    box-shadow:0 0 0 3px rgba(66,214,181,.12);
-}
-textarea{resize:vertical}
-.submit{
-    width:100%;
-    padding:15px;
-    border:0;
-    border-radius:8px;
-    background:#071b3a;
-    color:#fff;
-    font-weight:700;
-    cursor:pointer;
-}
-.submit:hover{background:#159f86}
-.message{text-align:center;margin-top:14px;font-weight:700}
+.admission{background:#f6fafb}.form-box{max-width:900px;margin:auto;background:#fff;padding:38px;border-radius:20px;box-shadow:0 12px 35px rgba(7,27,58,.08)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}.form-group{margin-bottom:18px}label{display:block;font-weight:700;color:#071b3a;margin-bottom:6px;font-size:14px}input,select,textarea{width:100%;padding:13px;border:1px solid #dce3ea;border-radius:8px;outline:none;font-family:inherit}input:focus,select:focus,textarea:focus{border-color:#43d7b7;box-shadow:0 0 0 3px rgba(67,215,183,.13)}textarea{resize:vertical}.submit{width:100%;border:0;background:#071b3a;color:#fff;padding:15px;border-radius:8px;font-weight:800;cursor:pointer}.form-message{text-align:center;margin-top:13px;font-weight:700}
 
-/* CONTACT */
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:24px;
-}
-.contact-card{
-    padding:32px 20px;
-    text-align:center;
-    border:1px solid #e3e8ef;
-    border-radius:15px;
-}
-.contact-icon{font-size:34px}
-.contact-card h3{color:#071b3a;margin:8px 0}
-.contact-card p{color:#687386;font-size:14px}
+/* CONTACT + FOOTER */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.contact-card{text-align:center;padding:30px;border:1px solid #e3e8ef;border-radius:16px}.contact-card .icon{font-size:35px}.contact-card h3{color:#071b3a;margin:8px}.contact-card p{color:#687386}
+footer{background:#06152e;color:#fff}.footer{padding:45px 0;display:flex;justify-content:space-between;gap:30px}.footer h2{color:#43d7b7}.footer p{color:#b9c6d5}.footer-links{display:flex;gap:20px;flex-wrap:wrap}.footer-links a{color:#d8e0e9}.copyright{text-align:center;border-top:1px solid rgba(255,255,255,.1);padding:17px;color:#9aa8b9;font-size:13px}
 
-/* FOOTER */
-footer{background:#06152e;color:#fff}
-.footer{
-    padding:42px 0;
-    display:flex;
-    justify-content:space-between;
-    gap:30px;
+/* RESPONSIVE */
+@media(max-width:1050px){
+.class-grid{grid-template-columns:repeat(4,1fr)}
+nav{gap:18px}
 }
-.footer h2{color:#42d6b5}
-.footer p{color:#bac5d4;font-size:14px}
-.footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer-links a{color:#d5dce6;font-size:14px}
-.footer-links a:hover{color:#42d6b5}
-.copyright{
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.1);
-    padding:18px;
-    color:#9ba8b9;
-    font-size:13px;
+@media(max-width:800px){
+.navbar{min-height:68px}.menu{display:block}
+nav{display:none;position:absolute;top:68px;left:0;width:100%;background:#061b3d;flex-direction:column;align-items:stretch;gap:0;padding:8px 5%;box-shadow:0 10px 20px rgba(0,0,0,.15)}
+nav.open{display:flex}nav a{padding:12px 0}nav a.active:after{display:none}.apply-top{text-align:center;margin:7px 0}
+.hero{min-height:620px;background-position:center}
+.about-grid{grid-template-columns:1fr}.class-grid{grid-template-columns:repeat(2,1fr)}.activity-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}
 }
-
-/* TABLET */
-@media (max-width:900px){
-    nav{
-        position:absolute;
-        top:72px;
-        left:0;
-        width:100%;
-        display:none;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0;
-        padding:10px 5%;
-        background:#071b3a;
-        box-shadow:0 10px 20px rgba(0,0,0,.15);
-    }
-    nav.active{display:flex}
-    nav a{width:100%;padding:12px 0}
-    .menu{display:block}
-    .hero-content{grid-template-columns:1fr}
-    .hero-card{max-width:500px;margin:auto}
-    .about-grid{grid-template-columns:1fr}
-    .class-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .activity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .contact-grid{grid-template-columns:1fr}
-}
-
-/* MOBILE */
-@media (max-width:600px){
-    .container{width:min(92%,520px)}
-    section{padding:62px 0}
-    .navbar{min-height:68px}
-    .logo{font-size:18px}
-    .logo-mark{width:40px;height:40px}
-    nav{top:68px}
-    .hero{min-height:auto}
-    .hero-content{padding:60px 0}
-    .hero h1{font-size:39px}
-    .hero p{font-size:15px}
-    .buttons{flex-direction:column}
-    .btn{text-align:center;width:100%}
-    .hero-card{padding:35px 20px}
-    .class-grid,.activity-grid{grid-template-columns:1fr}
-    .form-box{padding:24px 18px}
-    .form-row{grid-template-columns:1fr;gap:0}
-    .about-image{min-height:270px}
-    .about-circle{width:165px;height:165px;font-size:68px}
-    .footer{flex-direction:column}
+@media(max-width:520px){
+.container{width:92%}section{padding:60px 0}.logo{font-size:19px}.logo-mark{width:42px;height:42px}
+.hero{min-height:650px;background-position:center}.hero-content{padding:70px 0}.hero h1{font-size:42px}.hero p{font-size:15px}
+.hero-buttons{flex-direction:column}.btn{justify-content:center;text-align:center}
+.section-heading h2{font-size:30px}.class-grid,.activity-grid{grid-template-columns:1fr}.class-card{min-height:175px}
+.form-box{padding:24px 17px}.form-row{grid-template-columns:1fr;gap:0}.about-image{height:280px}.footer{flex-direction:column}
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <div class="container navbar">
-    <a href="#home" class="logo">
-        <span class="logo-mark">AD</span>
-        AD <b>Foundation</b>
-    </a>
-
-    <button class="menu" id="menuBtn" type="button" aria-label="Open menu">☰</button>
-
-    <nav id="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#classes">Classes</a>
-        <a href="#activities">Activities</a>
-        <a href="#admission">Admission</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<a href="#home" class="logo"><span class="logo-mark">AD</span><span>AD <b>Foundation</b></span></a>
+<button class="menu" id="menuBtn" type="button">☰</button>
+<nav id="nav">
+<a class="active" href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#classes">Classes</a>
+<a href="#activities">Activities</a>
+<a href="#admission">Admission</a>
+<a href="#contact">Contact</a>
+<a class="apply-top" href="#admission">Apply Now</a>
+</nav>
 </div>
 </header>
 
 <section class="hero" id="home">
-<div class="container hero-content">
-    <div>
-        <div class="small-title">WELCOME TO AD FOUNDATION</div>
-        <h1>Education Today,<span>Better Future Tomorrow.</span></h1>
-        <p>AD Foundation provides education, digital skills, AI learning, creativity and activities for a brighter future.</p>
-        <div class="buttons">
-            <a href="#admission" class="btn primary">Apply for Admission</a>
-            <a href="#classes" class="btn secondary">Explore Classes</a>
-        </div>
-    </div>
-
-    <div class="hero-card">
-        <div class="hero-icon">🎓</div>
-        <h2>Learn • Create • Grow</h2>
-        <p>Education and skill development under one roof.</p>
-        <div class="stats">
-            <div><strong>7+</strong>Programs</div>
-            <div><strong>100%</strong>Learning</div>
-        </div>
-    </div>
-</div>
-</section>
-
-<section class="about" id="about">
 <div class="container">
-    <div class="section-title">
-        <span>ABOUT US</span>
-        <h2>Building Skills for a Better Future</h2>
-        <p>AD Foundation focuses on education, technology, creativity and student development.</p>
-    </div>
-
-    <div class="about-grid">
-        <div class="about-image"><div class="about-circle">🎓</div></div>
-
-        <div class="about-text">
-            <h3>Why Choose AD Foundation?</h3>
-            <p>We provide students with academic education along with modern digital and creative skills.</p>
-
-            <div class="feature">
-                <div class="check">✓</div>
-                <div><h4>Quality Education</h4><p>Simple and effective learning environment.</p></div>
-            </div>
-
-            <div class="feature">
-                <div class="check">✓</div>
-                <div><h4>Modern Skills</h4><p>Computer, AI and graphic design learning.</p></div>
-            </div>
-
-            <div class="feature">
-                <div class="check">✓</div>
-                <div><h4>Creative Activities</h4><p>Activities for creativity and confidence.</p></div>
-            </div>
-        </div>
-    </div>
+<div class="hero-content">
+<div class="hero-tag">WELCOME TO AD FOUNDATION</div>
+<h1>Education Today,<br>Better Future <span>Tomorrow.</span></h1>
+<p>AD Foundation provides education, digital skills, AI learning, creativity and activities for a brighter future.</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="#admission">🎓 Apply for Admission</a>
+<a class="btn btn-outline" href="#classes">▣ Explore Classes</a>
+</div>
+</div>
 </div>
 </section>
 
 <section id="classes">
 <div class="container">
-    <div class="section-title">
-        <span>OUR CLASSES</span>
-        <h2>Learn Skills That Matter</h2>
-        <p>Explore our educational and skill development programs.</p>
-    </div>
+<div class="section-heading"><div class="eyebrow">OUR CLASSES</div><h2>Learn Skills That Matter</h2><p>Explore our educational and skill development programs.</p></div>
+<div class="class-grid">
+<div class="class-card"><div class="class-icon">📖</div><h3>English Class</h3></div>
+<div class="class-card"><div class="class-icon">🔢</div><h3>Math Class</h3></div>
+<div class="class-card"><div class="class-icon">🔬</div><h3>Science Class</h3></div>
+<div class="class-card"><div class="class-icon">💻</div><h3>Computer Class</h3></div>
+<div class="class-card"><div class="class-icon">🤖</div><h3>AI Class</h3></div>
+<div class="class-card"><div class="class-icon">🎨</div><h3>Graphic Design</h3></div>
+<div class="class-card"><div class="class-icon">⭐</div><h3>Other Activities</h3></div>
+</div>
+</div>
+</section>
 
-    <div class="class-grid">
-        <div class="class-card"><div class="class-icon">📖</div><h3>English Class</h3><p>Improve English speaking, reading, writing and communication skills.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">🔢</div><h3>Math Class</h3><p>Learn mathematics through concepts, practice and problem solving.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">🔬</div><h3>Science Class</h3><p>Understand science concepts through simple and practical learning.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">💻</div><h3>Computer Class</h3><p>Learn computer basics, applications and digital skills.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">🤖</div><h3>AI Class</h3><p>Learn about Artificial Intelligence and modern technology.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">🎨</div><h3>Graphic Design Class</h3><p>Develop creative design skills using modern design tools.</p><a href="#admission">Join Class →</a></div>
-        <div class="class-card"><div class="class-icon">🌟</div><h3>Other Activities</h3><p>Educational, creative and skill-based activities for overall development.</p><a href="#admission">Join Activity →</a></div>
-    </div>
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-image"></div>
+<div class="about-text"><h2>Building Skills for a Better Future</h2><p>AD Foundation focuses on education, technology, creativity and student development.</p>
+<div class="points">
+<div class="point"><div class="check">✓</div><div><b>Quality Education</b><p>Simple and effective learning environment.</p></div></div>
+<div class="point"><div class="check">✓</div><div><b>Modern Skills</b><p>Computer, AI and graphic design learning.</p></div></div>
+<div class="point"><div class="check">✓</div><div><b>Creative Activities</b><p>Activities for creativity, confidence and teamwork.</p></div></div>
+</div></div>
 </div>
 </section>
 
 <section class="activities" id="activities">
 <div class="container">
-    <div class="section-title">
-        <span>OTHER ACTIVITIES</span>
-        <h2>Learn Beyond the Classroom</h2>
-        <p>Activities for confidence, creativity and teamwork.</p>
-    </div>
-
-    <div class="activity-grid">
-        <div class="activity"><span>🎤</span><h3>Communication</h3><p>Build confidence and communication skills.</p></div>
-        <div class="activity"><span>🎨</span><h3>Creative Work</h3><p>Encourage imagination and creativity.</p></div>
-        <div class="activity"><span>🧠</span><h3>Problem Solving</h3><p>Develop logical thinking skills.</p></div>
-        <div class="activity"><span>👥</span><h3>Team Activities</h3><p>Learn teamwork and leadership skills.</p></div>
-    </div>
+<div class="section-heading"><div class="eyebrow">OTHER ACTIVITIES</div><h2>Learn Beyond the Classroom</h2><p>Activities for confidence, creativity and teamwork.</p></div>
+<div class="activity-grid">
+<div class="activity"><span>🎤</span><h3>Communication</h3><p>Build confidence and communication skills.</p></div>
+<div class="activity"><span>🎨</span><h3>Creative Work</h3><p>Encourage imagination and creativity.</p></div>
+<div class="activity"><span>🧠</span><h3>Problem Solving</h3><p>Develop logical thinking skills.</p></div>
+<div class="activity"><span>👥</span><h3>Team Activities</h3><p>Learn teamwork and leadership skills.</p></div>
+</div>
 </div>
 </section>
 
 <section class="admission" id="admission">
 <div class="container">
-    <div class="section-title">
-        <span>ADMISSION</span>
-        <h2>Admission Form</h2>
-        <p>Fill in the form to apply for admission.</p>
-    </div>
-
-    <div class="form-box">
-        <form id="admissionForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="studentName">Student Name *</label>
-                    <input id="studentName" type="text" placeholder="Enter student name" required>
-                </div>
-                <div class="form-group">
-                    <label for="parentName">Parent / Guardian Name *</label>
-                    <input id="parentName" type="text" placeholder="Enter parent / guardian name" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="mobile">Mobile Number *</label>
-                    <input id="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit mobile number" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="Enter email address">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="course">Select Course *</label>
-                    <select id="course" required>
-                        <option value="">Select a course</option>
-                        <option>English Class</option>
-                        <option>Math Class</option>
-                        <option>Science Class</option>
-                        <option>Computer Class</option>
-                        <option>AI Class</option>
-                        <option>Graphic Design Class</option>
-                        <option>Other Activities</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="age">Student Age *</label>
-                    <input id="age" type="number" min="5" max="100" placeholder="Enter age" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="address">Address *</label>
-                <textarea id="address" rows="4" placeholder="Enter your address" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="3" placeholder="Any additional information..."></textarea>
-            </div>
-
-            <button class="submit" type="submit">Submit Admission Form</button>
-            <div class="message" id="formMessage" aria-live="polite"></div>
-        </form>
-    </div>
+<div class="section-heading"><div class="eyebrow">ADMISSION</div><h2>Admission Form</h2><p>Fill in the form to apply for admission.</p></div>
+<div class="form-box">
+<form id="admissionForm">
+<div class="form-row">
+<div class="form-group"><label>Student Name *</label><input id="studentName" required placeholder="Enter student name"></div>
+<div class="form-group"><label>Parent / Guardian Name *</label><input id="parentName" required placeholder="Enter parent / guardian name"></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>Mobile Number *</label><input id="mobile" type="tel" inputmode="numeric" maxlength="10" required placeholder="10-digit mobile number"></div>
+<div class="form-group"><label>Email</label><input id="email" type="email" placeholder="Enter email address"></div>
+</div>
+<div class="form-row">
+<div class="form-group"><label>Select Course *</label><select id="course" required><option value="">Select a course</option><option>English Class</option><option>Math Class</option><option>Science Class</option><option>Computer Class</option><option>AI Class</option><option>Graphic Design</option><option>Other Activities</option></select></div>
+<div class="form-group"><label>Student Age *</label><input id="age" type="number" min="5" max="100" required placeholder="Enter age"></div>
+</div>
+<div class="form-group"><label>Address *</label><textarea id="address" rows="4" required placeholder="Satreti-2, Block A-17"></textarea></div>
+<div class="form-group"><label>Message</label><textarea id="message" rows="3" placeholder="Any additional information"></textarea></div>
+<button class="submit" type="submit">Submit Admission Form</button>
+<div class="form-message" id="formMessage"></div>
+</form>
+</div>
 </div>
 </section>
 
 <section id="contact">
 <div class="container">
-    <div class="section-title">
-        <span>CONTACT US</span>
-        <h2>Get in Touch With Us</h2>
-    </div>
-
-    <div class="contact-grid">
-        <div class="contact-card"><div class="contact-icon">📍</div><h3>Our Address</h3><p>Satreti-2,<br>Block A-17</p></div>
-        <div class="contact-card"><div class="contact-icon">📞</div><h3>Phone</h3><p>Contact number will be added soon.</p></div>
-        <div class="contact-card"><div class="contact-icon">✉️</div><h3>Email</h3><p>Email address will be added soon.</p></div>
-    </div>
+<div class="section-heading"><div class="eyebrow">CONTACT US</div><h2>Get in Touch With Us</h2></div>
+<div class="contact-grid">
+<div class="contact-card"><div class="icon">📍</div><h3>Address</h3><p>Satreti-2,<br>Block A-17</p></div>
+<div class="contact-card"><div class="icon">📞</div><h3>Phone</h3><p>Contact number will be added soon.</p></div>
+<div class="contact-card"><div class="icon">✉️</div><h3>Email</h3><p>Email address will be added soon.</p></div>
+</div>
 </div>
 </section>
 
-<footer>
-<div class="container footer">
-    <div>
-        <h2>AD Foundation</h2>
-        <p>Education • Skills • Creativity • Future</p>
-    </div>
-    <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#classes">Classes</a>
-        <a href="#admission">Admission</a>
-        <a href="#contact">Contact</a>
-    </div>
-</div>
-<div class="copyright">© <span id="year"></span> AD Foundation. All Rights Reserved.</div>
-</footer>
+<footer><div class="container footer"><div><h2>AD Foundation</h2><p>Education • Skills • Creativity • Future</p></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#classes">Classes</a><a href="#admission">Admission</a><a href="#contact">Contact</a></div></div><div class="copyright">© <span id="year"></span> AD Foundation. All Rights Reserved.</div></footer>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
-
-menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    menuBtn.textContent = nav.classList.contains("active") ? "✕" : "☰";
+const menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+menuBtn.addEventListener("click",()=>{nav.classList.toggle("open");menuBtn.textContent=nav.classList.contains("open")?"✕":"☰"});
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menuBtn.textContent="☰"}));
+document.getElementById("admissionForm").addEventListener("submit",function(e){
+e.preventDefault();
+const m=document.getElementById("mobile"),msg=document.getElementById("formMessage");
+if(!/^[0-9]{10}$/.test(m.value.trim())){msg.style.color="#d62828";msg.textContent="Please enter a valid 10-digit mobile number.";return}
+msg.style.color="#159f86";msg.textContent="✓ Thank you! Your admission form has been submitted.";this.reset();
 });
-
-nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
-        menuBtn.textContent = "☰";
-    });
-});
-
-document.getElementById("admissionForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const mobile = document.getElementById("mobile").value.trim();
-    const message = document.getElementById("formMessage");
-
-    if(!/^[0-9]{10}$/.test(mobile)){
-        message.style.color = "#d62828";
-        message.textContent = "Please enter a valid 10-digit mobile number.";
-        return;
-    }
-
-    message.style.color = "#159f86";
-    message.textContent = "✓ Thank you! Your admission form has been submitted.";
-    this.reset();
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
-
 </body>
 </html>
